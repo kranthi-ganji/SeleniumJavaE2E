@@ -1,19 +1,22 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import config.ConfigReader;
+import factory.DriverFactory;
+
 public class BaseTest {
 	protected WebDriver driver;
-	
+	DriverFactory driverFactory;
+	ConfigReader configReader;
 	@BeforeMethod
 	public void setUp() throws InterruptedException {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driverFactory = new DriverFactory();
+		configReader = new ConfigReader();
+		driver = driverFactory.initializeDriver();
+		driver.get(configReader.getUrl());
 		Thread.sleep(5000);
 	}
 	

@@ -6,15 +6,13 @@ import org.openqa.selenium.WebDriver;
 import base.BasePage;
 
 public class LoginPage extends BasePage{
-	WebDriver driver;
-
+	
 	By userName = By.xpath("//input[@name='username']");
 	By password = By.xpath("//input[@name='password']");
 	By loginBtn = By.xpath("//button[@type='submit']");
 	
 	public LoginPage(WebDriver driver){
 		super(driver);
-		this.driver = driver;
 	}
 	
 	public void enterUsername(String name) {
