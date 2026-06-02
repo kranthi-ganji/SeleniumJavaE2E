@@ -1,4 +1,0 @@
-base\BasePage.class
-config\ConfigReader.class
-pages\LoginPage.class
-factory\DriverFactory.class

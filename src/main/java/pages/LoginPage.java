@@ -10,6 +10,7 @@ public class LoginPage extends BasePage{
 	By userName = By.xpath("//input[@name='username']");
 	By password = By.xpath("//input[@name='password']");
 	By loginBtn = By.xpath("//button[@type='submit']");
+	By dashboardText = By.xpath("//h6[text()='Dashboard']");
 	
 	public LoginPage(WebDriver driver){
 		super(driver);
@@ -25,6 +26,10 @@ public class LoginPage extends BasePage{
 	
 	public void clickLoginBtn() {
 		click(driver.findElement(loginBtn));
+	}
+	public String getDashboardText() {
+
+	    return driver.findElement(dashboardText).getText();
 	}
 	
 }

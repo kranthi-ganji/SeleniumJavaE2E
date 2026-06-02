@@ -1,6 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 <suite name="SeleniumFrameworkSuite">
+	<listeners>
+		<listener class-name="listeners.TestListener" />
+	</listeners>
 	<test name="LoginTests">
 		<classes>
 			<class name="tests.LoginTest" />

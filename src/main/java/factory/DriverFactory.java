@@ -3,10 +3,10 @@ package factory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import config.ConfigReader;
+import utilities.ConfigReader;
 
 public class DriverFactory {
-	WebDriver driver;
+	static WebDriver driver;
 	ConfigReader configreader;
 	
 	public WebDriver initializeDriver() {
@@ -17,5 +17,8 @@ public class DriverFactory {
 		}
 		driver.manage().window().maximize();
 		return driver;
+	}
+	public static WebDriver getDriver() {
+	    return driver;
 	}
 }
